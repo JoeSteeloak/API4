@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace API4.Models {
 
@@ -17,6 +18,7 @@ namespace API4.Models {
 
         // Koppling till Album
         public int AlbumId { get; set; } // Foreign Key
+        [JsonIgnore]
         public Album? Album { get; set; } // Navigation Property
     }
 }

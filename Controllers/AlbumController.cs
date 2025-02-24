@@ -12,47 +12,47 @@ namespace API4.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SongController : ControllerBase
+    public class AlbumController : ControllerBase
     {
         private readonly SongContext _context;
 
-        public SongController(SongContext context)
+        public AlbumController(SongContext context)
         {
             _context = context;
         }
 
-        // GET: api/Song
+        // GET: api/Album
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Song>>> GetSongs()
+        public async Task<ActionResult<IEnumerable<Album>>> GetAlbums()
         {
-            return await _context.Songs.Include(s => s.Album).ToListAsync();
+            return await _context.Albums.Include(a => a.Songs).ToListAsync();
         }
 
-        // GET: api/Song/5
+        // GET: api/Album/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Song>> GetSong(int id)
+        public async Task<ActionResult<Album>> GetAlbum(int id)
         {
-            var song = await _context.Songs.FindAsync(id);
+            var album = await _context.Albums.FindAsync(id);
 
-            if (song == null)
+            if (album == null)
             {
                 return NotFound();
             }
 
-            return song;
+            return album;
         }
 
-        // PUT: api/Song/5
+        // PUT: api/Album/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSong(int id, Song song)
+        public async Task<IActionResult> PutAlbum(int id, Album album)
         {
-            if (id != song.SongId)
+            if (id != album.AlbumId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(song).State = EntityState.Modified;
+            _context.Entry(album).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace API4.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SongExists(id))
+                if (!AlbumExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace API4.Controllers
             return NoContent();
         }
 
-        // POST: api/Song
+        // POST: api/Album
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Song>> PostSong(Song song)
+        public async Task<ActionResult<Album>> PostAlbum(Album album)
         {
-            _context.Songs.Add(song);
+            _context.Albums.Add(album);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSong", new { id = song.SongId }, song);
+            return CreatedAtAction("GetAlbum", new { id = album.AlbumId }, album);
         }
 
-        // DELETE: api/Song/5
+        // DELETE: api/Album/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSong(int id)
+        public async Task<IActionResult> DeleteAlbum(int id)
         {
-            var song = await _context.Songs.FindAsync(id);
-            if (song == null)
+            var album = await _context.Albums.FindAsync(id);
+            if (album == null)
             {
                 return NotFound();
             }
 
-            _context.Songs.Remove(song);
+            _context.Albums.Remove(album);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool SongExists(int id)
+        private bool AlbumExists(int id)
         {
-            return _context.Songs.Any(e => e.SongId == id);
+            return _context.Albums.Any(e => e.AlbumId == id);
         }
     }
 }
