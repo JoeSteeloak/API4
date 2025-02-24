@@ -1,3 +1,6 @@
+using API4.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// DB Connections
+builder.Services.AddDbContext<SongContext>(options =>
+        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultDbString")));
 
 var app = builder.Build();
 

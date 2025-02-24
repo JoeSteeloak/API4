@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LZCgdohfi+c=",
+  "dgSpecHash": "8wHsTNhXRNQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\jonas\\Desktop\\.Net\\API4\\API4.csproj",
   "expectedPackageFiles": [
@@ -88,6 +88,7 @@
     "C:\\Users\\jonas\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\9.0.2\\microsoft.entityframeworkcore.sqlite.9.0.2.nupkg.sha512",
     "C:\\Users\\jonas\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\9.0.2\\microsoft.entityframeworkcore.sqlite.core.9.0.2.nupkg.sha512",
     "C:\\Users\\jonas\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\9.0.2\\microsoft.entityframeworkcore.sqlserver.9.0.2.nupkg.sha512",
+    "C:\\Users\\jonas\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\9.0.2\\microsoft.entityframeworkcore.tools.9.0.2.nupkg.sha512",
     "C:\\Users\\jonas\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.2\\microsoft.extensions.caching.abstractions.9.0.2.nupkg.sha512",
     "C:\\Users\\jonas\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.2\\microsoft.extensions.caching.memory.9.0.2.nupkg.sha512",
     "C:\\Users\\jonas\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.2\\microsoft.extensions.configuration.abstractions.9.0.2.nupkg.sha512",
