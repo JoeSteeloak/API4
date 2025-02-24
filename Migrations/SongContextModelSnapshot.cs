@@ -22,18 +22,18 @@ namespace API4.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("SongArtist")
+                    b.Property<string>("artist")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("SongCategory")
+                    b.Property<string>("category")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("SongLength")
+                    b.Property<int>("length")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("SongTitle")
+                    b.Property<string>("title")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

@@ -7,12 +7,12 @@ namespace API4.Models {
         public int SongId { get; set; }
 
         [Required]
-        public string? SongArtist { get; set; }
+        public string? artist { get; set; }
         [Required]
-        public string? SongTitle { get; set; }
+        public string? title { get; set; }
 
-        public int SongLength { get; set; }
+        public int length { get; set; }
         [Required]
-        public string? SongCategory { get; set; }
+        public string? category { get; set; }
     }
 }

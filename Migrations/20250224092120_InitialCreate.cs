@@ -16,10 +16,10 @@ namespace API4.Migrations
                 {
                     SongId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    SongArtist = table.Column<string>(type: "TEXT", nullable: false),
-                    SongTitle = table.Column<string>(type: "TEXT", nullable: false),
-                    SongLength = table.Column<int>(type: "INTEGER", nullable: false),
-                    SongCategory = table.Column<string>(type: "TEXT", nullable: false)
+                    artist = table.Column<string>(type: "TEXT", nullable: false),
+                    title = table.Column<string>(type: "TEXT", nullable: false),
+                    length = table.Column<int>(type: "INTEGER", nullable: false),
+                    category = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

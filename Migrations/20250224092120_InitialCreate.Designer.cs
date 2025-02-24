@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API4.Migrations
 {
     [DbContext(typeof(SongContext))]
-    [Migration("20250224090300_InitialCreate")]
+    [Migration("20250224092120_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -25,18 +25,18 @@ namespace API4.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("SongArtist")
+                    b.Property<string>("artist")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("SongCategory")
+                    b.Property<string>("category")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("SongLength")
+                    b.Property<int>("length")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("SongTitle")
+                    b.Property<string>("title")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
