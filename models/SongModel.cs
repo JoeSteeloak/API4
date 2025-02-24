@@ -14,5 +14,9 @@ namespace API4.Models {
         public int length { get; set; }
         [Required]
         public string? category { get; set; }
+
+        // Koppling till Album
+        public int AlbumId { get; set; } // Foreign Key
+        public Album? Album { get; set; } // Navigation Property
     }
 }
