@@ -29,18 +29,21 @@ namespace API4.Controllers
         }
 
         // GET: api/Album/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Album>> GetAlbum(int id)
-        {
-            var album = await _context.Albums.FindAsync(id);
+[HttpGet("{id}")]
+public async Task<ActionResult<Album>> GetAlbum(int id)
+{
+    var album = await _context.Albums
+        .Include(a => a.Songs)
+        .FirstOrDefaultAsync(a => a.AlbumId == id);
 
-            if (album == null)
-            {
-                return NotFound();
-            }
+    if (album == null)
+    {
+        return NotFound();
+    }
 
-            return album;
-        }
+    return album;
+}
+
 
         // PUT: api/Album/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
